@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sites Profissionais por apenas R$60</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #4cc9f0;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 5%;
+            backdrop-filter: blur(10px);
+            background: rgba(67, 97, 238, 0.9);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--success);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--success);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--success);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 201, 240, 0.6);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: 0;
+            width: 50%;
+            max-width: 700px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* seção contato otimizacao cor */
+        .cta {
+            padding: 5rem 5%;
+            background: var(--gradient);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 100px;
+                height: auto;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 80%;
+                right: auto;
+                margin: 0 auto;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--logo + texto -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <span style="color: #ff1e00;">Soluções Web</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#pricing">Preço</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                     <li><a href="#clientes">Clientes</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- secão inicio -->
+  <section class="hero" id="home">
+  <div class="hero-content">
+   <h1 class="gb-headline gb-headline-dc721b19 gb-headline-text" style="font-size: 54px;">
+  <strong>Sites Profissionais por apenas R$60</strong>
+</h1>
+<h2 class="gb-headline gb-headline-00c42fd2 gb-headline-text" style="font-size: 24px;">
+  Desenvolvimento de Sites &amp; <span style="color: #ff1e00;">Marketing Digital</span>
+</h2>
+<p></p>
+<p>
+  Destaque-se na internet com um site moderno, responsivo e impressionante – qualidade de alto nível por um valor que cabe no seu bolso. Não perca essa oportunidade de transformar sua presença online!
+</p>
+
+   <style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .botao-laranja {
+    background-color: #ff1e00;
+  }
+
+  .botao-laranja:hover {
+    background-color: #cc1900;
+    box-shadow: 0 0 15px rgba(255, 30, 0, 0.7), 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: pulse 0.6s ease-in-out;
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="hero-buttons">
+  <a href="https://wa.me/5514991989428?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20site%20profissional%20por%20R$60"
+     class="btn botao-laranja" target="_blank">
+    Fale Conosco
+  </a>
+  <button class="btn botao-laranja" onclick="abrirPopup()">Saiba Mais</button>
+</div>
+<!-- Popup flutuante -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>Sobre o Site Profissional</h2>
+    <p>
+      Você terá um site moderno, responsivo e personalizado por apenas <strong>R$60</strong>. Ideal para divulgar seus serviços com presença online e garantir seu sucesso digital.
+    </p>
+    <button class="close-btn" onclick="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+<style>
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Botões azuis com efeito */
+  .botao-azul {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(135deg, #3f37c9, #4361ee);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(63, 55, 201, 0.6);
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .botao-azul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-45deg);
+    transition: left 0.5s ease-in-out;
+  }
+
+  .botao-azul:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(67, 97, 238, 0.7);
+  }
+
+  .botao-azul:hover::before {
+    left: 100%;
+  }
+
+  /* Popup estilos */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup-content {
+    background: #3700ff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  }
+/* cor do botao */
+  .close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #fa7000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+/* cor botao quando passa o mause */
+  .close-btn:hover {
+    background: #ff1100;
+  }
+</style>
+
+<script>
+  function abrirPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+  
+  function fecharPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+            </div>
+        </div>
+        <div class="hero-image">
+           <style>
+  .hero-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0 0 0;
+    padding: 0; /* Removido padding */
+    background: none; /* Fundo totalmente removido */
+  }
+
+  .hero-image {
+    width: 547px;
+    height: 467px;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+    position: relative;
+    background: none; /* Fundo removido */
+    margin-right: -69px;
+    box-shadow: none; /* Sombra removida */
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: slideImages 40s infinite;
+    transition: opacity 1.5s ease-in-out;
+    border: none; /* Borda removida */
+  }
+
+  /* Timing das imagens */
+  .hero-image img:nth-child(1) { animation-delay: 0s; }
+  .hero-image img:nth-child(2) { animation-delay: 10s; }
+  .hero-image img:nth-child(3) { animation-delay: 20s; }
+  .hero-image img:nth-child(4) { animation-delay: 30s; }
+
+  @keyframes slideImages {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Responsividade */
+  @media (max-width: 1200px) {
+    .hero-image {
+      width: 450px;
+      height: 384px;
+      margin-right: -10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .hero-image {
+      width: 100%;
+      height: 350px;
+      max-width: 100%;
+      margin-right: 0;
+      border-radius: 0;
+    }
+  }
+</style>
+
+<section>
+  <div class="hero-container">
+    <div class="hero-image">
+      <img src="imagen18.png" alt="Exemplo de site profissional 1">
+      <img src="imagen19.png" alt="Exemplo de site profissional 2">
+      <img src="imagen20.jpg" alt="Exemplo de site profissional 3">
+      <img src="imagen16.jpg" alt="Exemplo de site profissional 4">
+    </div>
+  </div>
+</section>
+        </div>
+    </section>
+
+    <!-- Seção Recursos -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Recursos Incríveis</h2>
+            <p>Nossos sites profissionais incluem tudo que você precisa para se destacar online</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Totalmente Responsivo</h3>
+                <p>Seu site será perfeito em qualquer dispositivo, desde smartphones até desktops.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Super Rápido</h3>
+                <p>Otimizado para velocidade máxima, melhorando a experiência do usuário e SEO.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Otimizado para SEO</h3>
+                <p>Pronto para ser encontrado no Google com estrutura otimizada para mecanismos de busca.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Design Moderno</h3>
+                <p>Interface limpa e profissional que transmite credibilidade para seus clientes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Segurança</h3>
+                <p>Protegido contra ameaças comuns para manter seus dados seguros.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Suporte 24/7</h3>
+                <p>Equipe disponível para ajudar com qualquer dúvida ou necessidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preços</title>
+    <style>
+    /* Seção Preço */
+    .pricing {
+        padding: 3rem 5%;
+        background: #f5f7ff;
+        box-sizing: border-box;
+    }
+
+    .pricing .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        animation: fadeUp 1s ease-in-out;
+    }
+
+    .pricing .section-title h2 {
+        font-size: 2rem;
+        color: #3f37c9;
+        margin-bottom: 1rem;
+        animation: fadeUp 1s ease-in-out;
+    }
+
+    .pricing .section-title p {
+        font-size: 1rem;
+        color: #555;
+        animation: fadeIn 1.4s ease-in-out;
+    }
+
+    /* Animações */
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .pricing-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        max-width: 350px;
+        flex: 1 1 300px;
+        position: relative;
+        overflow: visible; /* Alterado para visible */
+        box-sizing: border-box;
+    }
+
+    .pricing-card::before {
+        content: 'OFERTA';
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background: var(--success, green);
+        color: white;
+        padding: 0.2rem 2rem;
+        transform: rotate(45deg);
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary, #3f37c9);
+        margin: 1rem 0;
+    }
+
+    .price span {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .pricing-features {
+        list-style: none;
+        margin: 1.5rem 0;
+        text-align: left;
+        padding: 0;
+    }
+
+    .pricing-features li {
+        margin-bottom: 0.6rem;
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .pricing-features li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--success, green);
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        color: #fff;
+        background-color: #ff1e00;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        width: auto; /* Garante que o botão não force um tamanho fixo */
+        white-space: nowrap; /* Evita quebra de texto */
+        box-sizing: border-box;
+        margin: 10px 0; /* Espaço extra ao redor */
+    }
+
+    .btn:hover {
+        background-color: #cc1900;
+        box-shadow: 0 0 15px rgba(255, 30, 0, 0.7), 0 8px 20px rgba(0, 0, 0, 0.2);
+        animation: pulse 0.6s ease-in-out;
+        transform: scale(1.05);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+        .pricing {
+            padding: 2rem 5%;
+        }
+        
+        .pricing .section-title h2 {
+            font-size: 1.8rem;
+        }
+        
+        .pricing .section-title p {
+            font-size: 0.95rem;
+        }
+        
+        .pricing-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pricing-card {
+            width: 90%; /* Alterado para 90% */
+            max-width: 100%;
+            padding: 1.5rem;
+            margin: 0 auto; /* Centraliza melhor */
+        }
+        
+        .price {
+            font-size: 1.8rem;
+        }
+        
+        .pricing-features li {
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            padding: 12px 20px; /* Ajuste para mobile */
+            font-size: 13px;
+            width: 80%; /* Largura maior */
+            margin: 10px auto; /* Centraliza */
+            display: block; /* Para centralizar com margin auto */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .pricing-card {
+            padding: 1.2rem;
+            width: 95%; /* Mais espaço nas bordas */
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            font-size: 13px;
+            width: 90%; /* Ocupa quase toda a largura */
+        }
+    }
+    </style>
+</head>
+<body>
+    <section class="pricing" id="pricing">
+        <div class="section-title">
+            <h2>Preço Imbatível</h2>
+            <p>Qualidade profissional por um preço que você não vai acreditar</p>
+        </div>
+
+        <div class="pricing-container">
+            <!-- Card 1 -->
+            <div class="pricing-card">
+                <h3>Site Normal</h3>
+                <div class="price">R$60<span>/Mesal</span></div>
+                <ul class="pricing-features">
+                    <li>Design moderno e responsivo</li>
+                    <li>Otimizado para SEO</li>
+                    <li>Formulário de contato</li>
+                    <li>Integração com redes sociais</li>
+                    <li>Suporte por 30 dias</li>
+                    <li>Subdomínio e hospedagem grátis </li>
+                </ul>
+                <a href="https://wa.me/5514991989428?text=Olá,%20quero%20saber%20mais%20sobre%20o%20site%20profissional"
+                   class="btn" target="_blank">Eu Quero</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pricing-card">
+                <h3>Landing Page</h3>
+                <div class="price">R$60<span>/único</span></div>
+                <ul class="pricing-features">
+                    <li>Alta conversão</li>
+                    <li>Design otimizado</li>
+                    <li>Integração com redes sociais</li>
+                    <li>Até 4 páginas</li>
+                    <li>Subdomínio e hospedagem grátis</li>
+                </ul>
+                <a href="https://wa.me/5514991989428?text=Olá,%20quero%20saber%20mais%20sobre%20a%20landing%20page"
+                   class="btn" target="_blank">Eu Quero</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card">
+                <h3>Site Profissional</h3>
+                <div class="price">R$299<span>/+ R$30 Mensal</span></div>
+                <ul class="pricing-features">
+                    <li>Design moderno e responsivo</li>
+                    <li>Otimizado para SEO</li>
+                    <li>Formulário de contato</li>
+                    <li>Integração com redes sociais</li>
+                    <li>Suporte por 30 dias</li>
+                    <li>Domínio e hospedagem grátis por um ano</li>
+                </ul>
+                <a href="https://wa.me/5514991989428?text=Olá,%20quero%20saber%20mais%20sobre%20o%20blog%20profissional"
+                   class="btn" target="_blank">Eu Quero</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+    <!-- Seção Contato -->
+    <section class="cta" id="contact">
+        <div class="cta-content">
+            <h2>Pronto para colocar seu site no ar??</h2>
+            <p>Não perca mais tempo com sites ultrapassados. Fale conosco agora mesmo e tenha seu site profissional em poucos dias!</p>
+            <p>Entre em contato e vamos criar algo incrível juntos!</p>
+            <a href="https://wa.me/5514991989428?text=Ol%c3%a1,%20quero%20um%20site%20profissional%20por%20R$60" class="btn">Fale Conosco no WhatsApp</a>
+        </div>
+    </section>
+    
+<!-- Seção Clientes -->
+    <section class="cta" id="clientes">
+        <div class="cta-clientes">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .portfolio-header {
+            background: linear-gradient(135deg, var(--primary), #3a0ca3);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 16/9;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #3a0ca3;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 30px 20px;
+            }
+            
+            .portfolio-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <h2>Portfólio</h2>
+                <p>Site que criamos para nossos Clientes</p>
+    <main class="portfolio-grid">
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="cliente1.png" alt="Eletricista Residencial">
+            <div class="portfolio-overlay">
+                <h3>Eletricista Residencial</h3>
+                <p>Site profissional com serviços elétricos, orçamento online e agendamento de visitas técnicas</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio2.jpg" alt="Loja Virtual de Moda">
+            <div class="portfolio-overlay">
+                <h3>Loja de Moda</h3>
+                <p>E-commerce com integração de pagamentos</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio3.jpg" alt="Clínica Médica">
+            <div class="portfolio-overlay">
+                <h3>Clínica Médica</h3>
+                <p>Site institucional com agendamento online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio4.jpg" alt="Consultoria Financeira">
+            <div class="portfolio-overlay">
+                <h3>Consultoria Financeira</h3>
+                <p>Site profissional com área para clientes</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio5.jpg" alt="Academia">
+            <div class="portfolio-overlay">
+                <h3>Academia Fitness</h3>
+                <p>Site com vídeos de exercícios e matriculas online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio6.jpg" alt="Imobiliária">
+            <div class="portfolio-overlay">
+                <h3>Imobiliária</h3>
+                <p>Portal de imóveis com busca avançada</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio7.jpg" alt="Escola de Idiomas">
+            <div class="portfolio-overlay">
+                <h3>Escola de Idiomas</h3>
+                <p>Site com testes de nivelamento online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio8.jpg" alt="Salão de Beleza">
+            <div class="portfolio-overlay">
+                <h3>Salão de Beleza</h3>
+                <p>Site com galeria de trabalhos e agendamento</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio9.jpg" alt="Advocacia">
+            <div class="portfolio-overlay">
+                <h3>Escritório de Advocacia</h3>
+                <p>Site institucional com blog jurídico</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio10.jpg" alt="Fotógrafo Profissional">
+            <div class="portfolio-overlay">
+                <h3>Portfólio Fotográfico</h3>
+                <p>Galeria premium com proteção de imagens</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio11.jpg" alt="Pet Shop">
+            <div class="portfolio-overlay">
+                <h3>Pet Shop</h3>
+                <p>Loja virtual com agendamento de banho/tosa</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio12.jpg" alt="Confeitaria">
+            <div class="portfolio-overlay">
+                <h3>Confeitaria Artesanal</h3>
+                <p>Site com encomendas online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio13.jpg" alt="Consultório Dentário">
+            <div class="portfolio-overlay">
+                <h3>Clínica Odontológica</h3>
+                <p>Site com antes/depois e agendamento</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio14.jpg" alt="Agência de Marketing">
+            <div class="portfolio-overlay">
+                <h3>Agência de Marketing</h3>
+                <p>Site institucional com cases de sucesso</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio15.jpg" alt="Loja de Informática">
+            <div class="portfolio-overlay">
+                <h3>Loja de Informática</h3>
+                <p>E-commerce com filtros avançados</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio16.jpg" alt="Espaço de Coworking">
+            <div class="portfolio-overlay">
+                <h3>Espaço de Coworking</h3>
+                <p>Site com tour virtual e reservas</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio17.jpg" alt="Personal Trainer">
+            <div class="portfolio-overlay">
+                <h3>Personal Trainer</h3>
+                <p>Site com programas de treino online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio18.jpg" alt="Serviços de Encanamento">
+            <div class="portfolio-overlay">
+                <h3>Encanador Profissional</h3>
+                <p>Site com orçamento online</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio19.jpg" alt="Designer de Interiores">
+            <div class="portfolio-overlay">
+                <h3>Design de Interiores</h3>
+                <p>Portfólio com projetos 3D</p>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.pveletrecista.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="portfolio-item">
+            <img src="portfolio20.jpg" alt="Transportadora">
+            <div class="portfolio-overlay">
+                <h3>Transportadora</h3>
+                <p>Site com rastreamento de encomendas</p>
+            </div>
+        </div>
+    </a>
+</main>
+
+    </section>
+     <!-- Font Awesome CDN (necessário para os ícones) icones redes sociais-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 20px;
+    }
+
+    .social-links a:hover {
+      background-color: #007bff;
+      transform: scale(1.2) rotate(10deg);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+<footer style="font-size: 20px; font-family: Arial, sans-serif; background-color: #1a1a1a; color: #fff; padding: 40px 20px;">
+  <style>
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    .footer-title {
+      font-size: 24px;
+      margin-bottom: 25px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .section-heading {
+      color: #ff1e00;
+      font-size: 20px;
+      border-bottom: 2px solid #ff1e00;
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 25px;
+      animation: slideIn 0.8s ease-in-out;
+    }
+
+    .footer-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-list li {
+      flex: 1 1 250px;
+      background: #2a2a2a;
+      padding: 15px 20px;
+      border-radius: 10px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .footer-list li:hover {
+      background: #ff1e00;
+      color: #fff;
+      transform: translateY(-5px);
+    }
+
+    .social-links {
+      margin: 30px 0 10px;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff1e00;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 600px) {
+      .footer-logo {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-list li {
+        flex: 1 1 100%;
+      }
+
+      .footer-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+
+  <div class="footer-container">
+
+    <!-- Logo e título -->
+  
+
+    <h2 class="footer-title">Somos uma agência que temos a solução para o seu negócio.</h2>
+
+    <!-- Soluções Web -->
+    <h3 class="section-heading">Soluções Web</h3>
+    <ul class="footer-list">
+      <li>Criação de Sites</li>
+      <li>Criação de landing Page</li>
+      <li>Criação de logo</li>
+      <li>Criação Propagandas Virtuais</li>
+      <li>Otimização de Sites</li>
+      <li>Google Ads</li>
+      <li>Subdomínio e hospedagem grátis</li>
+    </ul>
+<nav style="margin-top: 20px;">
+  <style>
+    .mini-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .mini-menu li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .mini-menu li a:hover {
+      background-color: #ff1e00;
+      color: #fff;
+    }
+
+    @media (max-width: 500px) {
+      .mini-menu {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+
+  <ul class="mini-menu">
+    <li><a href="#home">Início</a></li>
+    <li><a href="#features">Recursos</a></li>
+    <li><a href="#pricing">Preço</a></li>
+    <li><a href="#contact">Contato</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+  </ul>
+</nav>
+
+   <!-- Redes Sociais -->
+<div class="social-links">
+  <a href="https://www.facebook.com/Paulo.Rafael.Sartorelli/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.facebook.com/Paulo.Rafael.Sartorelli/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- Direitos -->
+<p class="copyright">© 2025 Soluções e Criação de Sites. Todos os direitos reservados.</p>
+</div>
+
+<!-- Font Awesome CDN para ícones -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/5514991989428?text=Ol%c3%a1,%20gostaria%20de%20saber%20mais%20sobre%20o%20site%20profissional%20por%20R$20" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
